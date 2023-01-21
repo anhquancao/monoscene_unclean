@@ -1,0 +1,83 @@
+# dataset: "kitti"
+# project_scale: 2
+
+dataset: "NYU"
+project_scale: 4
+
+#corenet_proj: "light" # light, heavy, null
+#corenet_proj: "heavy" # light, heavy, null
+#corenet_proj: "lmscnet" # light, heavy, null
+corenet_proj: null
+
+n_relations: 8
+
+preprocess_dir: '/gpfswork/rech/kvd/uyl37fq/data/semantic_kitti/preprocess/preprocess' 
+enable_log: false
+kitti_root: "/gpfswork/rech/kvd/uyl37fq/data/semantic_kitti"
+kitti_preprocess_root: "/gpfsscratch/rech/kvd/uyl37fq/monoscene_preprocess/kitti"
+kitti_depth_root: "/gpfsscratch/rech/kvd/uyl37fq/Adabin/KITTI/"
+#kitti_logdir: '/gpfsscratch/rech/kvd/uyl37fq/logs/kitti'
+#kitti_logdir: '/gpfsscratch/rech/kvd/uyl37fq/logs/kitti_ablate'
+kitti_logdir: '/gpfsscratch/rech/kvd/uyl37fq/logs/kitti_nRelations'
+kitti_tsdf_root: "/gpfsscratch/rech/kvd/uyl37fq/sketch_dataset/TSDF_pred_depth_adabin/kitti"
+kitti_label_root: "/gpfsscratch/rech/kvd/uyl37fq/sketch_dataset/labels/kitti"
+kitti_occ_root: "/gpfsscratch/rech/kvd/uyl37fq/sketch_dataset/occupancy_adabin/kitti"
+kitti_sketch_root: "/gpfsscratch/rech/kvd/uyl37fq/sketch_dataset/sketch_3D/kitti"
+kitti_mapping_root: "/gpfsscratch/rech/kvd/uyl37fq/sketch_dataset/mapping_adabin/kitti"
+
+#logdir: '/gpfsscratch/rech/kvd/uyl37fq/logs/no_mask_255'
+logdir: '/gpfsscratch/rech/kvd/uyl37fq/logs/NYU_rerun'
+#logdir: '/gpfswork/rech/kvd/uyl37fq/logs/NYU'
+  #logdir: '/gpfswork/rech/kvd/uyl37fq/logs/ablation_v2'  
+
+class_proportion_loss: true 
+#class_relation_weight: "inv_freq"
+class_relation_weights: "default"  #"inv_freq"
+
+frustum_size: 8 
+virtual_img: false
+#frustum_size: 10 
+
+#is_binary: true
+
+batch_size: 2
+n_gpus: 1
+# context_prior: "CRCP"
+context_prior: null
+num_workers_per_gpu: 3 
+#exp_prefix: "test" 
+exp_prefix: "v12_1divlog_4xLargerFOV_FrusSize16x16_IoULoss_SumNonempties"
+#exp_prefix: "v12_removeCPThreshold_KLnonzeros_LRDecay30_AblateFrusSize_AddEpsMCALoss"
+empty_multiplier: 1.0
+
+run: 1
+
+lr: 1e-4
+weight_decay: 1e-4 
+
+kl_w: 1
+force_empty_w: 1  
+
+optimize_iou: true
+lovasz: false
+
+CE_relation_loss: true 
+MCA_relation_loss: false 
+CE_ssc_loss: true
+MCA_ssc_loss: true
+MCA_ssc_loss_type: 'minus_log'
+
+rgb_encoder: "UEffiNet"
+
+project_1_2: true
+project_1_4: true
+project_1_8: true
+project_1_16: false
+
+#dataset: "semantic_kitti"
+NYU_root: "/gpfswork/rech/kvd/uyl37fq/data/NYU/depthbin"
+NYU_preprocess_dir: "/gpfsscratch/rech/kvd/uyl37fq/precompute_data/NYU"
+
+
+
+

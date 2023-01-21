@@ -1,0 +1,17 @@
+preprocess_dir: '/gpfswork/rech/xqt/uyl37fq/data/semantic_kitti/preprocess/preprocess' 
+enable_log: true
+logdir: '/gpfsscratch/rech/xqt/uyl37fq/tb_logs'
+batch_size: 4  
+num_workers: 10
+exp_prefix: "test_branch"  
+
+seg_2d: true
+edge_rgb_post_process: null 
+edge_extractor: null 
+
+n_lmscnet_encoders: 1 
+n_pixels_per_voxel: 1 
+shared_lmsc_encoder: true
+branch: "feature"  
+
+  

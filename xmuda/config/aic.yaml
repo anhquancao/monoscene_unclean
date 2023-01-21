@@ -1,0 +1,12 @@
+enable_log: false
+logdir: '/gpfsscratch/rech/xqt/uyl37fq/logs/ablation_v2'
+batch_size: 4  
+num_workers: 3
+exp_prefix: "AICnet_SGD"  
+
+dataset: "NYU"
+NYU_root: "/gpfswork/rech/xqt/uyl37fq/data/NYU/depthbin"
+NYU_preprocess_dir: "/gpfsscratch/rech/xqt/uyl37fq/precompute_data/NYU_AIC"
+use_predited_depth: False
+
+

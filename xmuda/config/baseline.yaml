@@ -1,0 +1,34 @@
+enable_log: false
+  #logdir: '/gpfsscratch/rech/kvd/uyl37fq/logs/no_mask_255'
+kitti_logdir: '/gpfsscratch/rech/kvd/uyl37fq/logs/baselines_kitti'
+logdir: '/gpfsscratch/rech/kvd/uyl37fq/logs/baselines_NYU'
+#logdir: '/gpfsscratch/rech/kvd/uyl37fq/logs/kitti_1_1'
+batch_size: 4  
+n_gpus: 1
+num_workers_per_gpu: 3
+exp_prefix: "test"  
+
+dataset: "kitti"
+# dataset: "NYU"
+kitti_root: "/gpfswork/rech/kvd/uyl37fq/data/semantic_kitti"
+kitti_preprocess_root: "/gpfsscratch/rech/kvd/uyl37fq/monoscene_preprocess/kitti"
+
+kitti_depth_root: "/gpfsscratch/rech/kvd/uyl37fq/Adabin/KITTI/"
+kitti_tsdf_root: "/gpfsscratch/rech/kvd/uyl37fq/sketch_dataset/TSDF_pred_depth_adabin/kitti"
+kitti_label_root: "/gpfsscratch/rech/kvd/uyl37fq/sketch_dataset/labels/kitti"
+kitti_occ_root: "/gpfsscratch/rech/kvd/uyl37fq/sketch_dataset/occupancy_adabin/kitti"
+kitti_sketch_root: "/gpfsscratch/rech/kvd/uyl37fq/sketch_dataset/sketch_3D/kitti"
+kitti_mapping_root: "/gpfsscratch/rech/kvd/uyl37fq/sketch_dataset/mapping_adabin/kitti"
+#method: "AICNet"  
+method: "LMSCNet"  
+# method: "3DSketch"  
+
+NYU_root: "/gpfswork/rech/kvd/uyl37fq/data/NYU/depthbin"
+NYU_preprocess_dir: "/gpfsscratch/rech/kvd/uyl37fq/precompute_data/NYU"
+use_predicted_depth: true
+use_3DSketch_nonempty_mask: true
+
+predict_empty_from_depth: false
+optimize_everywhere: true
+
+
